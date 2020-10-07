@@ -75,7 +75,7 @@ public class GameUtils
 
     public static void start()
     {
-        //TODO: SkyWars.getGame().setGameState(GameState.INGAME);
+        SkyWars.getGame().setGameState(GameState.INGAME);
 
         try
         {

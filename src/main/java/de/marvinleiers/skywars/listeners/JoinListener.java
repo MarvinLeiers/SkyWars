@@ -33,12 +33,6 @@ public class JoinListener implements Listener
                 Location lobby = SkyWars.getPlugin().getGameConfig().getLocation("lobby");
                 player.teleport(lobby);
 
-                /*
-                    int x = random.nextInt(SkyWars.getPlugin().getTeams().size());
-                    Team team = SkyWars.getPlugin().getTeams().get(x);
-                    team.joinTeam(player);
-                 */
-
                 ItemStack selector = new ItemStack(Material.COMPASS);
                 ItemMeta meta = selector.getItemMeta();
                 meta.setDisplayName("§f§lTeam wählen");

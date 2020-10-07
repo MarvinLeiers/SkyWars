@@ -41,10 +41,8 @@ public class GameListener implements Listener
     @EventHandler
     public void onStartCountdownFinish(CountDownFinishEvent event)
     {
-        /* TODO:
         if (SkyWars.getGame().getGameState() != GameState.INGAME)
             return;
-         */
 
         for (Team team : SkyWars.getPlugin().getTeams())
         {
@@ -64,9 +62,9 @@ public class GameListener implements Listener
     @EventHandler
     public void onGameEnding(GameEndingEvent event)
     {
-        //TODO: SkyWars.getGame().setGameState(GameState.ENDING);
+        SkyWars.getGame().setGameState(GameState.ENDING);
 
-        Countdown countdown = new Countdown(new int[] {1, 2, 3, 4, 5, 10, 15}, 15);
+        Countdown countdown = new Countdown(new int[]{1, 2, 3, 4, 5, 10, 15}, 15);
         countdown.setUseXp(true);
         countdown.setUseTitle(false);
         countdown.startForAll();
@@ -80,18 +78,17 @@ public class GameListener implements Listener
     @EventHandler
     public void onEndingCountdownFinish(CountDownFinishEvent event)
     {
-        /* TODO:
-        if (WarGear.WarGears.getGameState() != GameState.ENDING)
+        if (SkyWars.getGame().getGameState() != GameState.ENDING)
             return;
-         */
 
         if (!ending)
             return;
 
         ending = false;
 
-        //TODO: API
         for (Player all : Bukkit.getOnlinePlayers())
             all.kickPlayer("§cSpiel beendet!");
+
+        Bukkit.getScheduler().runTaskLater(SkyWars.getPlugin(), () -> Bukkit.shutdown(), 20);
     }
 }

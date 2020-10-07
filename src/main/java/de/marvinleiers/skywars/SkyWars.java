@@ -18,11 +18,6 @@ import java.util.ArrayList;
 
 public final class SkyWars extends JavaPlugin
 {
-    /**
-     * TODO:
-     *  -/sw chest, um truhen hinzuzufügen
-     */
-
     private static Game game;
 
     private ArrayList<Team> teams;
@@ -45,9 +40,8 @@ public final class SkyWars extends JavaPlugin
         game = new Game();
 
         game.setMiniGameName("SkyWars");
-        //TODO change minplayers to 5
-        game.setMinPlayers(2);
-        //TODO: game.setMaxPlayers(16);
+        game.setMinPlayers(5);
+        game.setMaxPlayers(16);
         game.setSpectatorOnDeath(true);
         game.setAnimals(false);
         game.setMobs(false);
@@ -89,7 +83,6 @@ public final class SkyWars extends JavaPlugin
         team.setMaxSize(3);
 
         Location spawn = getGameConfig().getLocation("teams." + team.getTeamname().toLowerCase() + ".spawn");
-        System.out.println("Spawn for team " + team.getTeamname().toLowerCase() + " " + spawn);
 
         if (spawn != null)
             team.setSpawn(spawn);

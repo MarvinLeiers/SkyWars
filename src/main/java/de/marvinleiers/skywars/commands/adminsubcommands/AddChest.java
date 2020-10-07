@@ -1,6 +1,7 @@
-package de.marvinleiers.skywars.commands;
+package de.marvinleiers.skywars.commands.adminsubcommands;
 
 import de.marvinleiers.skywars.SkyWars;
+import de.marvinleiers.skywars.commands.Subcommand;
 import de.marvinleiers.skywars.utils.GameUtils;
 import org.bukkit.Material;
 import org.bukkit.block.Block;

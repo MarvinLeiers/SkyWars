@@ -1,5 +1,6 @@
 package de.marvinleiers.skywars.commands;
 
+import de.marvinleiers.skywars.commands.adminsubcommands.AddChest;
 import de.marvinleiers.skywars.commands.adminsubcommands.SetLobby;
 import de.marvinleiers.skywars.commands.adminsubcommands.SetSpectatorSpawn;
 import de.marvinleiers.skywars.commands.adminsubcommands.SetTeamSpawn;
